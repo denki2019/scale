@@ -7,10 +7,18 @@ import {frets} from './config.js';
 const FingerBoard = () => {
   const positionArray = getPositionArray(scales, tuning);
   const tr = positionArray.map((string, key) => <Strings string={string} key={key} />);
+  const th = positionArray[0].map((item, key) => <th key={key} style={{width: 130 - key * 4 + 'px'}}></th>);
+  const tr_last = positionArray[0].map((item, key) => <td key={key} ></td>);
 
   return (
       <table>
-        <tbody>{tr}</tbody>
+        <thead>
+          <tr>{th}</tr>
+        </thead>
+        <tbody>
+          {tr}
+          <tr>{tr_last}</tr>
+        </tbody>
       </table>
   );
 }

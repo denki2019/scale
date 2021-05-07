@@ -7,7 +7,9 @@ const App = () => {
       <header className="App-header">
         <p>Hello Finger Board!</p>
       </header>
-      <FingerBoard />
+      <div className="App-body">
+        <FingerBoard />
+      </div>
     </div>
   );
 }
