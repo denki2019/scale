@@ -4,9 +4,9 @@ import {scales} from './config.js';
 import {tuning} from './config.js';
 import {frets} from './config.js';
 
-const FingerBoard = () => {
+const FingerBoard = (props) => {
   const positionArray = getPositionArray(scales, tuning);
-  const tr = positionArray.map((string, key) => <Strings string={string} key={key} />);
+  const tr = positionArray.map((string, key) => <Strings string={string} key={key} major={props.major} />);
   const th = positionArray[0].map((item, key) => <th key={key} style={{width: 130 - key * 4 + 'px'}}></th>);
   const tr_last = positionArray[0].map((item, key) => <td key={key} ></td>);
 
@@ -15,7 +15,7 @@ const FingerBoard = () => {
         <thead>
           <tr>{th}</tr>
         </thead>
-        <tbody>
+        <tbody style={{display:'none'}}>
           {tr}
           <tr>{tr_last}</tr>
         </tbody>

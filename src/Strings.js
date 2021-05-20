@@ -3,11 +3,15 @@ const Strings = (props) => {
     const td = string.map((scale, key) => {
         if (scale) {
             if (scale === 'F' || scale === 'B') {
-                return <td key={key}><span className="half">{scale}</span></td>
+                if (props.major === true) {
+                    return <td key={key}><span className="half">{scale}</span></td>
+                } else {
+                    return <td key={key}></td>
+                }
             }
             return <td key={key}><span>{scale}</span></td>
         } else {
-            return <td key={key}>{scale}</td>
+            return <td key={key}></td>
         }
     });
 
