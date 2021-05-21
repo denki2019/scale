@@ -1,8 +1,7 @@
 import './App.css';
 import ControlPanel from './ControlPanel';
 
-const App = (props) => {
-  console.log(props);
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">

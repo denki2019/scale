@@ -1,12 +1,11 @@
 import Strings from './Strings';
 import './FingerBoard.css';
-import {scales} from './config.js';
 import {tuning} from './config.js';
 import {frets} from './config.js';
 
 const FingerBoard = (props) => {
-  const positionArray = getPositionArray(scales, tuning);
-  const tr = positionArray.map((string, key) => <Strings string={string} key={key} major={props.major} />);
+  const positionArray = _getPositionArray(props.scale, tuning);
+  const tr = positionArray.map((string, key) => <Strings string={string} key={key} />);
   const th = positionArray[0].map((item, key) => <th key={key} style={{width: 130 - key * 4 + 'px'}}></th>);
   const tr_last = positionArray[0].map((item, key) => <td key={key} ></td>);
 
@@ -15,7 +14,7 @@ const FingerBoard = (props) => {
         <thead>
           <tr>{th}</tr>
         </thead>
-        <tbody style={{display:'none'}}>
+        <tbody>
           {tr}
           <tr>{tr_last}</tr>
         </tbody>
@@ -23,17 +22,13 @@ const FingerBoard = (props) => {
   );
 }
 
-const getPositionArray = (scales, tuning) => {
+const _getPositionArray = (scale, tuning) => {
   let positionArray = [];
   tuning.forEach(item => {
     let string = [];
     for (let i = 0; i <= frets; i++) {
-      string.push(scales[item]);
-      if (item !== 2 && item !== 6 && i !== frets) {
-        string.push('');
-        i++;
-      }
-      if (item === 6) {
+      string.push(scale[item]);
+      if (item === 11) {
         item = 0;
       } else {
         item++;
