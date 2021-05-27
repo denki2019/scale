@@ -1,14 +1,14 @@
 const Strings = (props) => {
-    const string = props.string;
-    const td = string.map((scale, key) => {
+    const td = props.string.map((scale, key) => {
+        let scaleNote;
         if (scale) {
-            // if (scale === 'F' || scale === 'B') {
-            //     return <td key={key}><span className="half">{scale}</span></td>
-            // }
-            return <td key={key}><span>{scale}</span></td>
-        } else {
-            return <td key={key}></td>
+            if (scale === props.root) {
+                scaleNote = <span className="root">{scale}</span>;
+            } else {
+                scaleNote = <span>{scale}</span>;
+            }
         }
+        return <td key={key}>{scaleNote}</td>
     });
 
     return (

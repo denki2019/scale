@@ -1,0 +1,24 @@
+.optionsPanel {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 20px 70px;
+    margin: 50px;
+    position: relative;
+}
+
+.optionsPanelTitle {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    background-color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.optionGroup {
+    display: flex;
+}
+
+.optionItem {
+    margin-right: 30px;
+}

@@ -46,7 +46,7 @@ td span {
     cursor: pointer;
 }
 
-td span.half {
+td span.root {
     background-color:rgb(255, 202, 228);
 }
 

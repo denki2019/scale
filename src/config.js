@@ -20,7 +20,7 @@ const SCALES = [
 //Default
 const DEFAULT_TUNING = [4, 11, 7, 2, 9, 4];
 
-const DEFAULT_ROOT = 0;
+// const DEFAULT_ROOT = 0;
 
 //Options
 export const tuning = DEFAULT_TUNING;
@@ -28,4 +28,4 @@ export const frets = 24;
 
 export const notes = NOTES;
 export const scales = SCALES;
-export const root = DEFAULT_ROOT;
+// export const root = DEFAULT_ROOT;
